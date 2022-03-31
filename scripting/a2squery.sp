@@ -595,10 +595,10 @@ public void socketRulesReceive(Socket socket, char[] data, const int dataSize, a
 	}
 	else if (packetHeader == MULTI_PACKET) {
 #if DEBUG
-		int id = byteReader.GetLong(); // Id | Long
+		int id = byteReader.GetLong();
 		int totalPackets = byteReader.GetByte();
 		int packetNumber = byteReader.GetByte();
-		int size = byteReader.GetShort(); // Size | Short
+		int size = byteReader.GetShort();
 
 		Print(arg, "MultiPacket %X (%i of %i) Size: %i", id, packetNumber + 1, totalPackets, size);
 #else
