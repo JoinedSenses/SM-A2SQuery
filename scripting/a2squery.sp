@@ -507,7 +507,7 @@ public void socketPlayerReceive(Socket socket, char[] data, const int dataSize, 
 			response[responseLen],
 			sizeof(response) - responseLen,
 			"%s %02i |  %03i  | %06.0f | %s",
- 			count ? "\n" : "",
+			count ? "\n" : "",
 			index,
 			score,
 			duration,
@@ -556,13 +556,13 @@ public void socketRulesReceive(Socket socket, char[] data, const int dataSize, a
 	 * Value -------------------------- | String
 	 */
 
-	 /** ==== Normal Response Multi Packet
-	  * \xFE\xFF\XFF\XFF -------------- | Long
-	  * ID ---------------------------- | Long
-	  * Total Packets ----------------- | Byte
-	  * Packet Number ----------------- | Byte
-	  * Size -------------------------- | Short
-	  */
+	/** ==== Normal Response Multi Packet
+	 * \xFE\xFF\XFF\XFF -------------- | Long
+	 * ID ---------------------------- | Long
+	 * Total Packets ----------------- | Byte
+	 * Packet Number ----------------- | Byte
+	 * Size -------------------------- | Short
+	 */
 
 	ByteReader byteReader;
 	byteReader.SetData(data, dataSize);
@@ -639,9 +639,9 @@ public void socketRulesReceive(Socket socket, char[] data, const int dataSize, a
 				response[responseLen],
 				sizeof(response) - responseLen,
 				"%s%s: %s",
-	 			count ? "\n" : "",
-	 			name,
-	 			value
+				count ? "\n" : "",
+				name,
+				value
 			);
 
 			if (++count == CountMax) {
@@ -667,9 +667,9 @@ public void socketRulesReceive(Socket socket, char[] data, const int dataSize, a
 				response[responseLen],
 				sizeof(response) - responseLen,
 				"%s%s: %s",
-	 			count ? "\n" : "",
-	 			name,
-	 			value
+				count ? "\n" : "",
+				name,
+				value
 			);
 
 			if (++count == CountMax) {
@@ -703,9 +703,9 @@ public void socketRulesReceive(Socket socket, char[] data, const int dataSize, a
 				response[responseLen],
 				sizeof(response) - responseLen,
 				"%s%s: %s",
-	 			count ? "\n" : "",
-	 			name,
-	 			value
+				count ? "\n" : "",
+				name,
+				value
 			);
 
 			if (++count == CountMax) {
