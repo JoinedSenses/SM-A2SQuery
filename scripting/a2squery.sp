@@ -750,9 +750,7 @@ public void socketDisconnect(Socket socket, any arg) {
 }
 
 public void socketError(Socket socket, const int errorType, const int errorNum, any arg) {
-#if DEBUG
 	Print(arg, "Socket error. Type: %i Num %i", errorType, errorNum);
-#endif
 
 	delete socket;
 }
