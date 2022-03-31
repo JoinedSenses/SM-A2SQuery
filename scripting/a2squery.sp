@@ -576,9 +576,9 @@ public void socketRulesReceive(Socket socket, char[] data, const int dataSize, a
 		int header = byteReader.GetByte();
 
 		if (header == 'A') {
-			static char reply[10] = A2S_REQUEST_RULES;
+			static char reply[A2S_REQUEST_RULES + 1] = A2S_REQUEST_RULES;
 
-			for (int i = 5, j = byteReader.offset; i < 9; ++i, ++j) {
+			for (int i = A2S_REQUEST_RULES - 4, j = byteReader.offset; i < A2S_REQUEST_RULES; ++i, ++j) {
 #if DEBUG
 				Print(arg, "%X", (reply[i] = data[j]));
 #else
@@ -586,7 +586,7 @@ public void socketRulesReceive(Socket socket, char[] data, const int dataSize, a
 #endif
 			}
 			
-			socket.Send(reply, 9);
+			socket.Send(reply, A2S_REQUEST_RULES);
 #if DEBUG
 			Print(arg, "Sent challenge response: %s", reply);
 #endif
