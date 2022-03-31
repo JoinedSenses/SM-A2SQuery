@@ -614,8 +614,8 @@ public void socketRulesReceive(Socket socket, char[] data, const int dataSize, a
 		
 		static char name[64]; // Rule name
 		static char value[64]; // Rule value
-		static bool isNameIncomplete = false; // name incomplete from last frame?
-		static bool isValueIncomplete = false; // value incomplete from last frame?
+		static bool isNameIncomplete = false; // name incomplete from last packet? true if null terminator not found
+		static bool isValueIncomplete = false; // value incomplete from last packet? true if null terminator not found
 		static int count = 0; // Used to count number of consolidated results
 		static const int CountMax = 10; // Max results before printing to client
 
