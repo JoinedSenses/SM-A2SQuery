@@ -602,10 +602,10 @@ public void socketRulesReceive(Socket socket, char[] data, const int dataSize, a
 
 		Print(arg, "MultiPacket %X (%i of %i) Size: %i", id, packetNumber + 1, totalPackets, size);
 #else
-		byteReader.offset += 4; // int id = byteReader.GetLong(); // Id | Long
+		byteReader.offset += 4; // Id | Long
 		int totalPackets = byteReader.GetByte();
 		int packetNumber = byteReader.GetByte();
-		byteReader.offset += 2; // int size = byteReader.GetShort(); // Size | Short
+		byteReader.offset += 2; // Size | Short
 #endif
 
 		if (packetNumber == 0) {
