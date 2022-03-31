@@ -472,7 +472,7 @@ public void socketPlayerReceive(Socket socket, char[] data, const int dataSize, 
 	 * 
 	 * Note: When a player is trying to connect to a server, they are recorded in the number
 	 * of players. However, they will not be in the list of player information chunks.
-	 * (This is why we check ByteReader::Repaining() instead of looping count)
+	 * (This is why we check ByteReader::Remaining() instead of looping count)
 	 * 
 	 * Warning: CS:GO Server by default returns only max players and server uptime.
 	 * You have to change server cvar "host_players_show" in server.cfg to value "2" if you
